@@ -2,6 +2,8 @@ var express = require('express');
 var session = require('express-session');
 var router = express.Router();
 
+var list = [];
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
     if (req.session.user) {
@@ -37,6 +39,18 @@ router.get('/logout', function (req, res) {
 
 router.get('/login', function (req, res) {
     res.render('login', {title: 'Login'});
+});
+
+router.post('/newEvent', function (req, res) {
+    if (req.session.user) {
+        var loc = new Location(req.body.lag, req.body.lng);
+        var event = new Event(loc, '2019-5-12', req.session.user.username, 'S2 5JD', 'http://testpicture');
+        list.push(event);
+        removeDuplicates();
+        res.render('index', {title: 'Home'});
+    } else {
+        res.render('login', {title: 'Login'});
+    }
 });
 
 /* GET login page. */
@@ -87,13 +101,24 @@ class Location {
 }
 
 function getEvents() {
-    var list = [];
     var localtemp = new Location(12, 22);
-    var test1 = new Event(localtemp, '2019-5-12', 'Tim', 'S2 5JD', 'http://testpicture');
+    var test1 = new Event(localtemp, '2019-5-13', 'Tim', 'S2 5JD', 'http://testpicture');
     var test2 = new Event(localtemp, '2019-5-12', 'Tim', 'S2 5JD', 'http://testpicture');
     list.push(test1);
     list.push(test2);
+    removeDuplicates();
     return list;
+}
+
+
+function removeDuplicates() {
+    let unique = {};
+    list.forEach(function (item) {
+        unique[JSON.stringify(item)] = item;
+    });
+    list = Object.keys(unique).map(function (u) {
+        return JSON.parse(u);
+    });
 }
 
 

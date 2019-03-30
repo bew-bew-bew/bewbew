@@ -8,6 +8,7 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="/styles/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/inline.css">
+    <link rel="stylesheet" type="text/css" href="styles/map.css">
 
     <!-- TODO add manifest here -->
     <!-- Add to home screen for Safari on iOS -->
@@ -21,37 +22,43 @@
     <script src="/scripts/bootstrap.min.js"></script>
 </head>
 <body>
+
 <div class="container">
-    <h1 class="page-header">Login</h1>
-    <form class="form-horizontal">
+    <h1 class="page-header">new event</h1>
+    <form class="form-horizontal" action="/newEvent" method="post">
         <div class="form-group">
             <div class="col-md-5">
                 <label for="exampleInputEvent">Event</label>
-                <input type="text" class="form-control"/>
+                <input type="text" name="name" class="form-control"/>
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-5">
                 <label for="exampleInputSDate">Start Date</label>
-                <input type="text" class="form-control"/>
+                <input type="text" name="start" class="form-control"/>
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-5">
                 <label for="exampleInputEDate">End Date</label>
-                <input type="text" class="form-control"/>
+                <input type="text" name="end" class="form-control"/>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group row">
             <div class="col-md-5">
-                <label for="exampleInputLocation">Location</label>
-                <input type="text" class="form-control"/>
+                <label for="exampleInputLocation">Location x</label>
+                <input id="map_x" type="text" name="lag" class="form-control"/>
+            </div>
+
+            <div class="col-md-5">
+                <label for="exampleInputLocation">Location y</label>
+                <input id="map_y" type="text" name="lng" class="form-control"/>
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-5">
                 <label for="exampleInputDis">Description</label>
-                <input type="text" class="form-control"/>
+                <input type="text" name="description" class="form-control"/>
             </div>
         </div>
         <div class="form-group">
@@ -60,9 +67,14 @@
             </div>
         </div>
     </form>
+    <div id="map" onload="initMap()"></div>
 </div>
 
+
 <script src="/scripts/database.js"></script>
+<script src="/scripts/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDicF83BImP7pDGNXP3Mv8kCKpxLCvQDFw&callback=initMap"
+        async defer></script>
 
 </body>
 </html>
