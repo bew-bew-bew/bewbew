@@ -1,5 +1,6 @@
 var express = require('express');
 var session = require('express-session');
+var uuid = require('uuid');
 var router = express.Router();
 
 var list = [];
@@ -84,12 +85,15 @@ router.post('/events', function (req, res) {
  * @constructor
  */
 class Event {
-    constructor(location, date, holder, address, firstPicture) {
+    constructor(location, start, end, holder, address, firstPicture, name, uuid) {
+        this.name = name;
         this.location = location;
-        this.date = date;
+        this.start = start;
+        this.end = end;
         this.holder = holder;
         this.address = address;
         this.firstPicture = firstPicture;
+        this.uuid = uuid;
     }
 }
 
@@ -102,8 +106,8 @@ class Location {
 
 function getEvents() {
     var localtemp = new Location(12, 22);
-    var test1 = new Event(localtemp, '2019-5-13', 'Tim', 'S2 5JD', 'http://testpicture');
-    var test2 = new Event(localtemp, '2019-5-12', 'Tim', 'S2 5JD', 'http://testpicture');
+    var test1 = new Event(localtemp, '2019-5-13', '2019-5-14', 'Tim', 'S2 5JD', 'http://testpicture', 'party in diamond', 123);
+    var test2 = new Event(localtemp, '2019-5-12', '2019-5-14', 'Tim', 'S2 5JD', 'http://testpicture', 'party in school', 456);
     list.push(test1);
     list.push(test2);
     removeDuplicates();
@@ -119,6 +123,10 @@ function removeDuplicates() {
     list = Object.keys(unique).map(function (u) {
         return JSON.parse(u);
     });
+}
+
+function buildID() {
+    return uuid.v4();
 }
 
 

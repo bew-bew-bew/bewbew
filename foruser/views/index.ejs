@@ -45,9 +45,13 @@
                     <div class="row">
                         <img class="item-img col-md-5" src="/images/whatever.jpg">
                         <div class="item-body col-md-7 middle">
-                            <div class="name">Holder: <%= event.holder %></div>
+                            <div class="name"><a href="/event/<%= event.uuid %>">Event: <%= event.name %></a></div>
                             <div class="address">Description: <%= event.description %></div>
-
+                            <div class="holder">Holder: <%= event.holder %></div>
+                            <div class="row">
+                                <div class="col-lg-4">start time: <%= event.start %></div>
+                                <div class="col-lg-4">end time: <%= event.end %></div>
+                            </div>
                         </div>
                     </div>
                     <div class="blackLine"></div>
