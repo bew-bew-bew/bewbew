@@ -42,10 +42,6 @@ router.get('/login', function (req, res) {
     res.render('login', {title: 'Login'});
 });
 
-router.get('/event', function (req, res) {
-    res.render('event1', {title: 'event'});
-});
-
 router.post('/newEvent', function (req, res) {
     if (req.session.user) {
         var loc = new Location(req.body.lag, req.body.lng);
@@ -78,7 +74,23 @@ router.post('/events', function (req, res) {
     res.send(JSON.stringify(events))
 });
 
+/* GET event detail page. */
+router.get('/event/:randomID', function (req, res) {
+    var id = req.params.randomID;
+    var it = null;
 
+    var i;
+    for (i = 0; i< list.length; i++){
+        if (id == list[i].uuid) {
+            it = list[i];
+        }
+    }
+    if (it == null){
+        res.sendStatus(500);
+    } else {
+        res.render('myEvent', {title: 'Event', event: it});
+    }
+});
 
 
 /**
