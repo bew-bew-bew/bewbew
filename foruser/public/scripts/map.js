@@ -1,9 +1,9 @@
-var event1 = {
+var pos1 = {
     lat: 52.38177,
     lng: -1.482
 };
 
-var event2 = {
+var pos2 = {
     lat: 53.38177,
     lng: -2.482
 };
@@ -68,11 +68,11 @@ function makeEvents() {
         return;
     }
     var marker1 = new google.maps.Marker({
-        position: event1,
+        position: pos1,
         title: "Hello World!"
     });
     var marker2 = new google.maps.Marker({
-        position: event2,
+        position: pos2,
         title: "Hello World!"
     });
     marker1.setMap(map);

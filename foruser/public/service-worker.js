@@ -16,8 +16,6 @@ var dataCacheName = 'Events';
 var cacheName = 'Events-1-1';
 var filesToCache = [
     '/',
-    '/scripts/app.js',
-    '/scripts/login.js',
     '/styles/inline.css',
     '/styles/login.css',
     '/styles/index.css',
@@ -84,7 +82,7 @@ self.addEventListener('activate', function (e) {
  * all the other pages are searched for in the cache. If not found, they are returned
  */
 self.addEventListener('fetch', function (e) {
-    console.log('[Service Worker] Fetch', e.request.url);
+    //console.log('[Service Worker] Fetch', e.request.url);
     var dataUrl = '/events';
     //if the request is '/events', post to the server
     if (e.request.url.indexOf(dataUrl) > -1) {
@@ -115,7 +113,7 @@ self.addEventListener('fetch', function (e) {
                             // an error. it just returns response not ok
                             // https://www.tjvantoll.com/2015/09/13/fetch-and-errors/
                             if (!response.ok) {
-                                console.log("error: " + err);
+                                console.log("error: ");
                             }
                         })
                         .catch(function (e) {

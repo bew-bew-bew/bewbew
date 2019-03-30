@@ -20,6 +20,8 @@
     <!-- Latest compiled JavaScript -->
     <script src="/scripts/bootstrap.min.js"></script>
 
+    <script src="/scripts/app.js"></script>
+
 
 </head>
 <body onload="initEvents()">
@@ -45,7 +47,8 @@
                     <div class="row">
                         <img class="item-img col-md-5" src="/images/whatever.jpg">
                         <div class="item-body col-md-7 middle">
-                            <div class="name"><a href="/event/<%= event.uuid %>">Event: <%= event.name %></a></div>
+                            <div class="name"><a href="/event">Event: <%= event.name %></a>
+                            </div>
                             <div class="address">Description: <%= event.description %></div>
                             <div class="holder">Holder: <%= event.holder %></div>
                             <div class="row">
@@ -70,10 +73,6 @@
 <a href="/add" class="float">
     <i class="i-float text-center"><font size="22px">+</font></i>
 </a>
-
-
-<script src="/scripts/login.js"></script>
-<script src="/scripts/app.js"></script>
 
 
 </body>

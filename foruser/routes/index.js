@@ -42,6 +42,10 @@ router.get('/login', function (req, res) {
     res.render('login', {title: 'Login'});
 });
 
+router.get('/event', function (req, res) {
+    res.render('event1', {title: 'event'});
+});
+
 router.post('/newEvent', function (req, res) {
     if (req.session.user) {
         var loc = new Location(req.body.lag, req.body.lng);
@@ -63,9 +67,9 @@ router.post('/login', function (req, res, next) {
     if (req.body.username == user.username && req.body.password == user.password) {
         req.session.user = user;
         req.session.isLogin = true;
-        res.send(200);
+        res.sendStatus(200);
     } else {
-        res.send(404);
+        res.sendStatus(404);
     }
 });
 
@@ -73,6 +77,8 @@ router.post('/events', function (req, res) {
     var events = getEvents();
     res.send(JSON.stringify(events))
 });
+
+
 
 
 /**
