@@ -9,8 +9,8 @@ const STORE_NAME = 'store_events';
 function initDatabase() {
     dbPromise = idb.openDb(DB_NAME, 1, function (upgradeDb) {
         if (!upgradeDb.objectStoreNames.contains(STORE_NAME)) {
-            var forecastDB = upgradeDb.createObjectStore(STORE_NAME, {keyPath: 'id', autoIncrement: true});
-            forecastDB.createIndex('location', 'location', {unique: false, multiEntry: true});
+            var eventDB = upgradeDb.createObjectStore(STORE_NAME, {keyPath: 'id', autoIncrement: true});
+            eventDB.createIndex('location', 'location', {unique: false, multiEntry: true});
         }
     });
 }
