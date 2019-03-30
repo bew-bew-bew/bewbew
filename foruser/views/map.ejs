@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/inline.css">
+
+    <!-- TODO add manifest here -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Weather PWA">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <script src="/scripts/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="/scripts/bootstrap.min.js"></script>
+
+
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 80%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="map" onload="initMap()"></div>
+
+<div class="col-sm-4 col-sm-offset-4">
+    <label for="basic-url">&nbsp;</label>
+    <div class="input-group">
+        <input id="map_input" type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+        <button class="btn btn-default" type="button" onclick="searchForEvents()">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+</div>
+
+<label for="basic-url">&nbsp;</label>
+<label for="basic-url">&nbsp;</label>
+<button onclick="makeEvents()">test</button>
+
+<script src="/scripts/map.js" ></script>
+<script src="/scripts/database.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDicF83BImP7pDGNXP3Mv8kCKpxLCvQDFw&callback=initMap"
+        async defer></script>
+</body>
+</html>

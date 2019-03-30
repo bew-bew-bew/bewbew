@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/inline.css">
+
+    <!-- TODO add manifest here -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Weather PWA">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <script src="/scripts/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="/scripts/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="nav navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-flwid">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">
+                <img src="images/icons/icon-152x152.png" style="height: 50px; margin-top: -15px;"/>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">HOME</a> </li>
+                <li><a href="#">AAA</a> </li>
+                <li><a href="#">BBB</a> </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">下拉demo<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">choose 1</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">choose 2</a> </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="search"/>
+                <button class="btn btn-primary">search</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container">
+            <img class="img-responsive center-block" src="images/event_gb/event2.jpg" style="height: auto; max-width: 100%;">
+    </div>
+
+
+
+<div style="height: 1500px;"></div>
+
+<script src="/scripts/app.js" ></script>
+<script src="/scripts/database.js"></script>
+
+</body>
+</html>

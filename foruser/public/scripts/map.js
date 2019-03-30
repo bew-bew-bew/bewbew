@@ -1,11 +1,11 @@
 var event1 = {
-    lat: 53.38177,
+    lat: 52.38177,
     lng: -1.482
 };
 
 var event2 = {
-    lat: 52.38177,
-    lng: -1.482
+    lat: 53.38177,
+    lng: -2.482
 };
 
 var map;

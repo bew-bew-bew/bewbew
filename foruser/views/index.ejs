@@ -24,6 +24,14 @@
 </head>
 <body onload="initEvents()">
 
+<div class="wrap">
+    <div class="search">
+        <button type="reset" class="searchButton" onclick="window.location.href = '/map'">
+            Search
+        </button>
+    </div>
+</div>
+
 <h1 class="text-center">My Event</h1>
 
 
@@ -38,12 +46,13 @@
                         <img class="item-img col-md-5" src="/images/whatever.jpg">
                         <div class="item-body col-md-7 middle">
                             <div class="name">Holder: <%= event.holder %></div>
-                            <div class="address">Address: <%= event.address %></div>
+                            <div class="address">Description: <%= event.description %></div>
 
                         </div>
                     </div>
-
+                    <div class="blackLine"></div>
                 </div>
+
             <% }) %>
 
         </div>

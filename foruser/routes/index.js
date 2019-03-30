@@ -47,7 +47,7 @@ router.post('/newEvent', function (req, res) {
         var event = new Event(loc, '2019-5-12', req.session.user.username, 'S2 5JD', 'http://testpicture');
         list.push(event);
         removeDuplicates();
-        res.render('index', {title: 'Home'});
+        res.redirect('index');
     } else {
         res.render('login', {title: 'Login'});
     }
