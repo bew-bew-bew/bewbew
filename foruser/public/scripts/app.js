@@ -7,12 +7,7 @@ function initEvents() {
                 console.log('Service Worker Registered');
             });
     }
-    if ('indexedDB' in window) {
-        initDatabase();
-    }
-    else {
-        console.log('This browser doesn\'t support IndexedDB');
-    }
+
 }
 
 function loadData() {
@@ -27,4 +22,27 @@ function loadData() {
 
         }
     })
+}
+
+function loginEvent() {
+    var username = 'wang';
+    var password = '123';
+    var data = {"username": username, 'password': password};
+    $.post({
+        url: '/login',
+        type: 'POST',
+        data: data,
+        success: function (data, status) {
+            if (status == 'success') {
+                alert('success');
+                location.href = 'index';
+            }
+        },
+        error: function (data, status, e) {
+            if (status == "error") {
+                location.href = 'login';
+            }
+        }
+    })
+
 }

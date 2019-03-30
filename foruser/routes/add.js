@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
         res.render('add', {title: 'add'});
     } else {
         req.session.error = "Please login.";
-        res.redirect('login');
+        res.render('login', {title: 'login'});
     }
 });
 

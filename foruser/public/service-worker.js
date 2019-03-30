@@ -119,7 +119,7 @@ self.addEventListener('fetch', function (e) {
                             }
                         })
                         .catch(function (e) {
-                            console.log("error: " + err);
+                            console.log("error: " + e);
                         })
             })
         );

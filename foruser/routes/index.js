@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
         res.render('index', {title: 'Home', events: events});
     } else {
         req.session.error = "Please login.";
-        res.redirect('login');
+        res.render('login', {title: 'Login'});
     }
 });
 
@@ -20,7 +20,7 @@ router.get('/index', function (req, res, next) {
         res.render('index', {title: 'Home', events: events});
     } else {
         req.session.error = "Please login.";
-        res.redirect('login');
+        res.render('login', {title: 'Login'});
     }
 });
 
