@@ -1,0 +1,114 @@
+
+.head {
+    float: left;
+    width: 100%;
+}
+
+body {
+    overflow: auto;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.search-box {
+    width: 100%;
+    margin: 0 auto 40px;
+}
+
+.middle {
+    position: relative;
+    top: 50%;
+    margin-left: 10px;
+}
+
+.listing-block {
+    background: #fff;
+    padding-top: 20px;
+}
+
+.item {
+    background: #fff;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.item-img {
+    width: 200px;
+    margin: 10px;
+    height: 136px;
+}
+
+.item-body {
+    border: 0px solid #bcbcbc;
+    border-left: 0;
+    height: 156px;
+}
+
+.name {
+    float: left;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 600;
+    color: #4765AB;
+}
+
+
+.item .address {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 5px;
+    color: #888;
+}
+
+.item .fav-box {
+    position: absolute;
+    right: 10px;
+    font-size: 20px;
+    top: 4px;
+    color: #E74C3C;
+}
+
+.float {
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #0C9;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    text-decoration: none;
+}
+
+
+.float:link {
+    text-decoration: none;
+}
+
+.float:active {
+    text-decoration: none;
+}
+
+.float:visited {
+    text-decoration: none;
+}
+
+.float:hover {
+    text-decoration: none;
+}
+
+
+.i-float {
+    margin-top: 22px;
+    text-decoration: none;
+}
+

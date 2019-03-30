@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/inline.css">
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="test">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <script src="/scripts/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="/scripts/bootstrap.min.js"></script>
+
+
+</head>
+<body onload="initEvents()">
+
+<h1 class="text-center">My Event</h1>
+
+
+<section class="search-box">
+    <div class="container-fluid">
+        <div class="listing-block">
+
+            <% events.forEach(function(event){ %>
+                <div class="item">
+                    <!-- <div class="item" onclick="window.location='{%= event.firstPicture %}';"> -->
+                    <div class="row">
+                        <img class="item-img col-md-5" src="/images/whatever.jpg">
+                        <div class="item-body col-md-7 middle">
+                            <div class="name">Holder: <%= event.holder %></div>
+                            <div class="address">Address: <%= event.address %></div>
+
+                        </div>
+                    </div>
+
+                </div>
+            <% }) %>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- float button -->
+
+<a href="/add" class="float">
+    <i class="i-float text-center"><font size="22px">+</font></i>
+</a>
+
+
+<script src="/scripts/login.js"></script>
+<script src="/scripts/app.js"></script>
+
+
+</body>
+</html>

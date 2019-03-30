@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/inline.css">
+    <link rel="stylesheet" type="text/css" href="styles/login.css">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="test">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <script src="/scripts/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="/scripts/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+
+<div class="wrapper">
+    <div id="formContent">
+
+        <!-- Login -->
+
+        <input type="text" id="login" class="first" name="login" placeholder="username">
+        <input type="password" id="password" name="login" placeholder="password">
+        <!--<button type="reset" onclick="login()" class="login_button">Log In</button>-->
+        <input type="button" onclick="login()" class="login_button" value="Log in"/>
+
+
+    </div>
+</div>
+
+
+<script src="/scripts/login.js"></script>
+
+</body>
+</html>
